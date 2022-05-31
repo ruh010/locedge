@@ -1,0 +1,322 @@
+{
+    "ar-sid": {
+        "geo": [
+            {
+                "reg": "^(?<pop>(?<code>[0-9]+))$",
+                "cdn": 1,
+                "provider": "arvancloud",
+                "dir": "data/pops/arvancloud.json"
+            }
+        ]
+    },
+    "ar-cache": {
+        "cache": [
+            {
+                "cdn": 1,
+                "provider": "arvancloud",
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "cf-ray": {
+        "geo": [
+            {
+                "reg": "^.*-(?<iata>(?<pop>[a-z]{3}))$",
+                "cdn": 1,
+                "provider": "cloudflare"
+            }
+        ]
+    },
+    "x-beluga-node": {
+        "geo": [
+            {
+                "reg": "^(.*)$",
+                "cdn": 1,
+                "provider": "belugacdn",
+                "dir": "data/pops/belugacdn.json"
+            }
+        ]
+    },
+    "x-beluga-cache-status": {
+        "cache": [
+            {
+                "cdn": 1,
+                "provider": "belugacdn",
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "x-77-pop": {
+        "geo": [
+            {
+                "reg": "^(?<pop>(?<code>[a-z0-9]+))$",
+                "cdn": 1,
+                "provider": "cdn77",
+                "dir": "data/pops/cdn77.json"
+            }
+        ]
+    },
+    "x-amz-cf-pop": {
+        "geo": [
+            {
+                "reg": "^(?<pop>(?<iata>[a-z]{3})[0-9]+-[a-z0-9]+)$",
+                "cdn": 1,
+                "provider": "cloudfront"
+            }
+        ]
+    },
+    "x-edge-location": {
+        "geo": [
+            {
+                "reg": "^(?<pop>(?<code>[a-z0-9]{4}))$",
+                "cdn": 1,
+                "provider": "keycdn",
+                "dir": "data/pops/keycdn.json"
+            }
+        ]
+    },
+    "x-cached-since": {
+        "feature": [
+            {
+                "cdn": 1,
+                "provider": "gcore"
+            }
+        ]
+    },
+    "x-id": {
+        "geo": [
+            {
+                "reg": "(?<pop>(?<code>[a-z0-9]+)-[a-z0-9]+-[a-z0-9]+)",
+                "provider": "gcore",
+                "cdn": 1,
+                "dir": "data/pops/gcore.json"
+            }
+        ]
+    },
+    "x-cf1": {
+        "geo": [
+            {
+                "reg": "[^.]*\\.(?<pop>(?<iata>[a-z]{3}).?)[:-]",
+                "cdn": 1,
+                "provider": "cachefly"
+            }
+        ]
+    },
+    "x-served-by": {
+        "geo": [
+            {
+                "reg": "cache(-[a-z0-9]+)?-(?<pop>(?<code>[a-z]{3})[0-9a-z]+-(?<iata>[a-z]{3})),?",
+                "cdn": 1,
+                "provider": "fastly"
+            }
+        ]
+    },
+    "x-hw": {
+        "geo": [
+            {
+                "reg": "[0-9]+\\.(?<pop>[0-9a-z]+\\.(?<code>[a-z]+).?)\\.[a-z0-9]+,?",
+                "cdn": 1,
+                "provider": "stackpath",
+                "dir": "data/pops/stackpath.json"
+            }
+        ],
+        "cache": [
+            {
+                "reg": "[0-9]+\\.[a-z0-9]+\\.[a-z0-9]+\\.((?<hit>c|pc)|(?<miss>[a-z0-9]+)|(?<expired>e|pr|x)),?",
+                "cdn": 1,
+                "provider": "stackpath"
+            }
+        ]
+    },
+    "x-sucuri-id": {
+        "geo": [
+            {
+                "reg": "^(?<pop>(?<code>[0-9]{2})[0-9]+)$",
+                "cdn": 1,
+                "provider": "sucuri",
+                "dir": "data/pops/sucuri.json"
+            }
+        ]
+    },
+    "server": {
+        "geo": [
+            {
+                "reg": "bunnycdn-(?<pop>(?<code>[a-z]{2,3}[0-9]))-.*",
+                "cdn": 1,
+                "provider": "bunnycdn",
+                "dir": "data/pops/bunnycdn.json"
+            },
+            {
+                "reg": "^(?:ecacc|ecs|ecd|eos)\\s\\((?<pop>(?<code>[a-z]{3}).*)\\)$",
+                "cdn": 1,
+                "provider": "edgecast",
+                "dir": "data/pops/edgecast.json"
+            }
+        ],
+        "feature": [
+            {
+                "reg": "^.*bunnycdn.*$",
+                "cdn": 1,
+                "provider": "bunnycdn"
+            },
+            {
+                "reg": "^cfs.*$",
+                "cdn": 1,
+                "provider": "cachefly"
+            },
+            {
+                "reg": "^.*cdn77.*$",
+                "cdn": 1,
+                "provider": "cdn77"
+            },
+            {
+                "reg": "^artisanal bits$",
+                "cdn": 1,
+                "provider": "fastly"
+            },
+            {
+                "reg": "^.*keycdn.*$",
+                "cdn": 1,
+                "provider": "keycdn"
+            },
+            {
+                "reg": "^(golfe2|gws|cafe|sffe|.*google.*|esf)$",
+                "provider": "google"
+            },
+            {
+                "reg": "^.*netdna.*$",
+                "provider": "maxcdn",
+                "cdn": 1
+            }
+        ]
+    },
+    "cdn-cache": {
+        "cache": [
+            {
+                "cdn": 1,
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "x-77-cache": {
+        "cache": [
+            {
+                "cdn": 1,
+                "provider": "cdn77",
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "x-cache": {
+        "geo": [
+            {
+                "provider": "tata",
+                "cdn": 1,
+                "reg": "[^,]*,v[0-9]+(?<pop>(?<iata>[a-z]{3}).*)"
+            }
+        ],
+        "cache": [
+            {
+                "cdn": 1,
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "cache": {
+        "cache": [
+            {
+                "cdn": 1,
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "cf-cache-status": {
+        "cache": [
+            {
+                "cdn": 1,
+                "provider": "cloudflare",
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "x-cache-hit": {
+        "cache": [
+            {
+                "cdn": 1
+            }
+        ]
+    },
+    "x-sucuri-cacche": {
+        "cache": [
+            {
+                "cdn": 1,
+                "provider": "sucuri",
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "zy-cache-status": {
+        "cache": [
+            {
+                "cdn": 1,
+                "provider": "zycada",
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "x-iinfo": {
+        "cache": [
+            {
+                "cdn": 1,
+                "provider": "imperva"
+            }
+        ]
+    },
+    "age": {
+        "cache": [
+            {
+                "reg": "^((?<hit>[1-9][0-9]*)|(?<miss>[0-9]+))$",
+                "cdn": 1
+            }
+        ]
+    },
+    "cdn-cache-control": {
+        "cache": [
+            {
+                "cdn": 1
+            }
+        ]
+    },
+    "cache-status": {
+        "cache": [
+            {
+                "cdn": 1,
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "x-cdn": {
+        "feature": [
+            {
+                "cdn": 1,
+                "reg": "(?<provider>[a-z]+),?"
+            }
+        ]
+    },
+    "x-cache-status": {
+        "cache": [
+            {
+                "cdn": 1,
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    },
+    "x-nginx-cache-status": {
+        "cache": [
+            {
+                "cdn": 1,
+                "reg": "^(?<cache>.*)$"
+            }
+        ]
+    }
+}

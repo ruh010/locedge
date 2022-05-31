@@ -1,0 +1,21 @@
+{
+    "akamaized.net": {
+        "provider": "akamai",
+        "cdn": 1
+    },
+    "edgekey.net": {
+        "provider": "akamai",
+        "cdn": 1
+    },
+    "akamaiedge.net": {
+        "provider": "akamai",
+        "cdn": 1
+    },
+    "edgesuite.net": {
+        "provider": "akamai",
+        "cdn": 1
+    },
+    "wixdns.net": {
+        "cdn": 1
+    }
+}
