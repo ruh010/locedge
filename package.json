@@ -1,5 +1,5 @@
 {
-  "name": "cdn-finder",
+  "name": "locedge",
   "dependencies": {
     "@maxmind/geoip2-node": "^3.4.0",
     "node-dig-dns": "^0.3.2",
@@ -8,7 +8,7 @@
     "yargs": "^17.4.1"
   },
   "bin": {
-    "cdn-finder": "bin/cli.js"
+    "locedge": "bin/cli.js"
   },
   "devDependencies": {
     "jest": "^27.5.1"
@@ -26,16 +26,6 @@
       "path": "data/maxmind/GeoLite2-City.mmdb",
       "name": "city",
       "url": "https://git.io/GeoLite2-City.mmdb"
-    }
-  ],
-  "hoiho": [
-    {
-      "name": "ipv4",
-      "path": "data/caida/ipv4-geo.json"
-    },
-    {
-      "name": "ipv6",
-      "path": "data/caida/ipv6-geo.json"
     }
   ]
 }

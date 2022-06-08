@@ -1,5 +1,5 @@
 const { openBuffer } = require('@maxmind/geoip2-node').Reader;
-const { readFileSync, createWriteStream } = require('fs');
+const { readFileSync, createWriteStream, fstat } = require('fs');
 const promisify = require('util').promisify;
 const pipeline = require('stream').pipeline;
 const fetch = require('node-fetch');
