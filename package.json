@@ -1,0 +1,38 @@
+{
+  "name": "locedge",
+  "description": "Detect CDN usage in a website, find CDN providers, and locate CDN Point-of-Presences (PoPs).",
+  "keywords": [
+    "CDN",
+    "Monitor",
+    "cdn finder",
+    "geolocation",
+    "cdn detection",
+    "debug"
+  ],
+  "homepage": "https://github.com/LumosHR/locedge",
+  "author": {
+    "name": "Run Huang",
+    "email": "itsrunhuang@outlook.com"
+  },
+  "version": "1.0.5",
+  "dependencies": {
+    "@maxmind/geoip2-node": "^3.4.0",
+    "node-dig-dns": "^0.3.2",
+    "node-fetch": "^2.6.7",
+    "simple-node-logger": "^21.8.12",
+    "yargs": "^17.4.1"
+  },
+  "bin": {
+    "locedge": "bin/cli.js"
+  },
+  "repository": {
+    "url": "git://github.com/LumosHR/locedge.git"
+  },
+  "databases": [
+    {
+      "path": "data/maxmind/GeoLite2-ASN.mmdb",
+      "name": "asn",
+      "url": "https://git.io/GeoLite2-ASN.mmdb"
+    }
+  ]
+}
