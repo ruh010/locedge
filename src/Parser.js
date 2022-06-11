@@ -178,7 +178,7 @@ class Parser {
     applyRule(value, rules, hostdata, callback) {
         for (const { reg, cdn, provider, ...rest } of rules) {
             try {
-                if (reg && !(new RegExp(reg, 'i')).test(value)) return;
+                if (reg && !(new RegExp(reg, 'i')).test(value)) continue;
                 hostdata.update({ cdn, provider });
                 if (!reg) return;
                 const matches = execAll(value, reg);
