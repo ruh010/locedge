@@ -1,5 +1,5 @@
 const { openBuffer } = require('@maxmind/geoip2-node').Reader;
-const { readFileSync, createWriteStream, fstat } = require('fs');
+const { readFileSync, createWriteStream, fstat, existsSync } = require('fs');
 const promisify = require('util').promisify;
 const pipeline = require('stream').pipeline;
 const fetch = require('node-fetch');
@@ -15,8 +15,10 @@ class Query {
         this.log = consoleLog;
         this.databases = databases;
         databases.forEach(({ path: rp, name }) => {
+            const dbpath = path.join(__dirname, '..', rp);
+            if (!existsSync(dbpath)) return;
             this[`${name}Reader`] = openBuffer(
-                readFileSync(path.join(__dirname, '..', rp))
+                readFileSync(dbpath)
             );
         });
     }
@@ -42,6 +44,7 @@ class Query {
                 break;
             }
             case 'Geo': {
+                if (!this.cityReader) break;
                 try {
                     const { city, country, continent, location } = await this.cityReader.city(ip);
                     return {

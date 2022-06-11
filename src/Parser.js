@@ -32,11 +32,14 @@ class Parser {
             const { location, pop } = await this.inferFromHost(ip, hostdata);
             const { city, source } = (route && locate({
                 route: route.networkPath
-            })) || {};
+            })) || await this.database.get(ip, 'Geo') || {};
 
             return Promise.all(Object.values(resources).map(async (resourcedata) => {
                 resourcedata.update({ location, pop });
-                if (city || !resourcedata.located()) resourcedata.update({ location: city });
+                if (
+                    (source !== 'geolite2' && city) ||
+                    !resourcedata.located()
+                ) resourcedata.update({ location: city });
             }));
         }));
 

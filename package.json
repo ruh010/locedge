@@ -14,7 +14,7 @@
     "name": "Run Huang",
     "email": "itsrunhuang@outlook.com"
   },
-  "version": "1.0.5",
+  "version": "1.0.7",
   "dependencies": {
     "@maxmind/geoip2-node": "^3.4.0",
     "node-dig-dns": "^0.3.2",
@@ -33,6 +33,11 @@
       "path": "data/maxmind/GeoLite2-ASN.mmdb",
       "name": "asn",
       "url": "https://git.io/GeoLite2-ASN.mmdb"
+    },
+    {
+      "path": "data/maxmind/GeoLite2-City.mmdb",
+      "name": "city",
+      "url": "https://git.io/GeoLite2-City.mmdb"
     }
   ]
 }
